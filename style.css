@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --nice-white: #ffffff;
+  --full-black: #000000;
+  --theme-color: #301534;
+  --text: #5c5c5c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 40vh;
+  background-image: url("./images/background-pattern-desktop.svg");
+  z-index: -1;
+}
+
+.card {
+  max-width: 40%;
+  background-color: var(--nice-white);
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.card .title {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.card .title span {
+  margin-left: 0.5rem;
+  color: var(--theme-color);
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.card-body .accoridon-item .accoridon-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.card-body .accoridon-item .accoridon-title span {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.card-body .accoridon-item .accoridon-title img {
+  cursor: pointer;
+}
+
+.card-body .accoridon-item .accoridon-body {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3rem;
+  margin-bottom: 1rem;
+  display: none;
+  transition: all ease-in-out 0.5s;
+}
+
+.card-body .accoridon-item.active .accoridon-body {
+  display: block;
+}
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .header {
+    background-image: url("./images/background-pattern-mobile.svg");
+  }
+  .card {
+    max-width: 80%;
+  }
+}
